@@ -28,7 +28,30 @@ becomes C. To change a message back, each letter is replaced by the one three be
 
 
 PROGRAM :-
-
-
+```
+#include <stdio.h>
+#include <string.h>
+void caesarCipher(char *text, int shift) 
+{
+    for (int i = 0; text[i]; i++) 
+    {
+        if (text[i] >= 'A' && text[i] <= 'Z')
+        text[i] = ((text[i]- 'A' + shift) % 26) + 'A';
+        
+    }
+ }
+int main() 
+{
+    char text[] = "AESTHETIC";
+    caesarCipher(text, 3);
+    printf("Encrypted Message: %s\n", text);
+    caesarCipher(text,-3);
+    printf("Decrypted Message: %s\n", text);
+    return 0;
+    
+}
+```
 
 OUTPUT :-
+
+<img width="1336" height="985" alt="Screenshot 2025-08-30 081709" src="https://github.com/user-attachments/assets/a068d66c-77df-419b-bd0b-36bed2c11ef7" />
